@@ -17,15 +17,15 @@
                     <VirtualizingStackPanel Orientation="Vertical"/>
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
-            <Button x:Name="Button1" BorderThickness="0" Content="&gt;" Background="LightGray" RenderTransformOrigin="0.5, 0.5">
-                <Button.RenderTransform>
+            <ToggleButton x:Name="Button1" BorderThickness="0" Content="&gt;" Background="LightGray" RenderTransformOrigin="0.5, 0.5">
+                <ToggleButton.RenderTransform>
                     <RotateTransform Angle="0"/>
-                </Button.RenderTransform>
-            </Button>
+                </ToggleButton.RenderTransform>
+            </ToggleButton>
             <MenuItem Header="A) 123"/>
             <MenuItem Header="B) 234"/>
             <Menu.Triggers>
-                <EventTrigger RoutedEvent="Button.Click">
+                <EventTrigger RoutedEvent="ToggleButton.Click">
                     <EventTrigger.Actions>
                         <BeginStoryboard>
                             <Storyboard Timeline.DesiredFrameRate="60">
