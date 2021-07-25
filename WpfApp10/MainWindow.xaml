@@ -11,7 +11,7 @@
         <Grid.Background>
             <SolidColorBrush x:Name="gridColor1" Color="White"/>
         </Grid.Background>
-        <Menu Width="20" HorizontalAlignment="Left" Background="LightGray">
+        <Menu x:Name="MainMenu1" Width="20" HorizontalAlignment="Left" Background="LightGray">
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Vertical"/>
@@ -30,10 +30,10 @@
                         <BeginStoryboard>
                             <Storyboard Timeline.DesiredFrameRate="60">
                                 <DoubleAnimation DecelerationRatio="1" Duration="0:0:0.5"
-                                                 From="0" To="180" Storyboard.TargetName="Button1"
+                                                 From="{Binding ElementName=Button1,Path=(UIElement.RenderTransform).(RotateTransform.Angle)}" To="180" Storyboard.TargetName="Button1"
                                                  Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)" />
                                 <DoubleAnimation DecelerationRatio="1" Duration="0:0:0.5"
-                                                 From="20" To="50" Storyboard.TargetProperty="Width" />
+                                                 From="{Binding ElementName=MainMenu1,Path=Width}" To="50" Storyboard.TargetProperty="Width" />
                                 <ColorAnimation Storyboard.TargetName="gridColor1" Storyboard.TargetProperty="Color" 
                                                     From="{Binding ElementName=gridColor1,Path=Color}" To="Gray" Duration="0:0:0.5"/>
                             </Storyboard>
@@ -45,10 +45,10 @@
                         <BeginStoryboard>
                             <Storyboard Timeline.DesiredFrameRate="60">
                                 <DoubleAnimation DecelerationRatio="1" Duration="0:0:0.5"
-                                                 From="180" To="0" Storyboard.TargetName="Button1"
+                                                 From="{Binding ElementName=Button1,Path=(UIElement.RenderTransform).(RotateTransform.Angle)}" To="0" Storyboard.TargetName="Button1"
                                                  Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)" />
                                 <DoubleAnimation DecelerationRatio="1" Duration="0:0:0.5"
-                                                 From="50" To="20" Storyboard.TargetProperty="Width" />
+                                                 From="{Binding ElementName=MainMenu1,Path=Width}" To="20" Storyboard.TargetProperty="Width" />
                                 <ColorAnimation Storyboard.TargetName="gridColor1" Storyboard.TargetProperty="Color" 
                                                     From="{Binding ElementName=gridColor1,Path=Color}" To="White" Duration="0:0:0.5"/>
                             </Storyboard>
